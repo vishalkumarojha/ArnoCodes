@@ -31,14 +31,14 @@ export function UserMenu() {
         </div>
         <DropdownMenuSeparator className="bg-arno-dark-600" />
         <DropdownMenuItem className="text-gray-300 hover:text-white hover:bg-arno-dark-700 cursor-pointer">
-          <User className="mr-2 h-4 w-4" />
+          <User className="mr-2 h-4 w-4" aria-hidden="true" />
           <span>Profile</span>
         </DropdownMenuItem>
         <DropdownMenuItem
           className="text-gray-300 hover:text-white hover:bg-arno-dark-700 cursor-pointer"
           onClick={() => signOut()}
         >
-          <LogOut className="mr-2 h-4 w-4" />
+          <LogOut className="mr-2 h-4 w-4" aria-hidden="true" />
           <span>Sign out</span>
         </DropdownMenuItem>
       </DropdownMenuContent>

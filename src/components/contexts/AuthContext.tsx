@@ -1,84 +1,52 @@
-// import type React from "react"
-// import { createContext, useContext, useEffect, useState } from "react"
-// import { account } from "@/lib/appwrite"
-// import type { Models } from "appwrite"
-// import { ID } from "appwrite"
+"use client"
 
-// interface AuthContextType {
-//   user: Models.User<Models.Preferences> | null
-//   loading: boolean
-//   signIn: (email: string, password: string) => Promise<void>
-//   signUp: (email: string, password: string, name: string) => Promise<void>
-//   signOut: () => Promise<void>
-// }
+import type React from "react"
+import { createContext, useContext, useState, useEffect } from "react"
+import { account } from "@/lib/appwrite"
+import type { Models } from "appwrite"
 
-// const AuthContext = createContext<AuthContextType | undefined>(undefined)
+interface AuthContextType {
+  user: Models.User<Models.Preferences> | null
+  loading: boolean
+  signOut: () => Promise<void>
+}
 
-// export function AuthProvider({ children }: { children: React.ReactNode }) {
-//   const [user, setUser] = useState<Models.User<Models.Preferences> | null>(null)
-//   const [loading, setLoading] = useState(true)
+const AuthContext = createContext<AuthContextType>({
+  user: null,
+  loading: true,
+  signOut: async () => {},
+})
 
-//   useEffect(() => {
-//     checkUser()
-//   }, [])
+export const useAuth = () => useContext(AuthContext)
 
-//   async function checkUser() {
-//     try {
-//       const currentUser = await account.get()
-//       setUser(currentUser)
-//     } catch (error) {
-//       setUser(null)
-//     } finally {
-//       setLoading(false)
-//     }
-//   }
+export function AuthProvider({ children }: { children: React.ReactNode }) {
+  const [user, setUser] = useState<Models.User<Models.Preferences> | null>(null)
+  const [loading, setLoading] = useState(true)
 
-//   async function signIn(email: string, password: string) {
-//     try {
-//       await account.createEmailSession(email, password)
-//       await checkUser()
-//     } catch (error) {
-//       console.error("Sign in error:", error)
-//       throw error
-//     }
-//   }
+  useEffect(() => {
+    checkUser()
+  }, [])
 
-//   async function signUp(email: string, password: string, name: string) {
-//     try {
-//       await account.create(ID.unique(), email, password, name)
-//       await signIn(email, password)
-//     } catch (error) {
-//       console.error("Sign up error:", error)
-//       throw error
-//     }
-//   }
+  const checkUser = async () => {
+    try {
+      const currentUser = await account.get()
+      setUser(currentUser)
+    } catch (error) {
+      setUser(null)
+    } finally {
+      setLoading(false)
+    }
+  }
 
-//   async function signOut() {
-//     try {
-//       await account.deleteSession("current")
-//       setUser(null)
-//     } catch (error) {
-//       console.error("Sign out error:", error)
-//       throw error
-//     }
-//   }
+  const signOut = async () => {
+    try {
+      await account.deleteSession("current")
+      setUser(null)
+    } catch (error) {
+      console.error("Error signing out:", error)
+    }
+  }
 
-//   const value = {
-//     user,
-//     loading,
-//     signIn,
-//     signUp,
-//     signOut,
-//   }
-
-//   return <AuthContext.Provider value={value}>{!loading && children}</AuthContext.Provider>
-// }
-
-// export function useAuth() {
-//   const context = useContext(AuthContext)
-//   if (context === undefined) {
-//     throw new Error("useAuth must be used within an AuthProvider")
-//   }
-//   return context
-// }
+  return <AuthContext.Provider value={{ user, loading, signOut }}>{children}</AuthContext.Provider>
+}
 
