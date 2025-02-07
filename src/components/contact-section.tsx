@@ -9,17 +9,17 @@ export function ContactSection() {
         <div className="flex justify-center mb-6">
           <div className="flex -space-x-4">
           <img
-              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202025-02-02%20015745-wrHlRT6CEoKhZnKzxr5q8AX3VHLYmj.png"
+              src="https://media.licdn.com/dms/image/v2/D5603AQH_XonycIsMFw/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1728555637089?e=1744243200&v=beta&t=xLpq_EGR1c7iOqQCE_s0rcFKxeP1T5wk6UYT97PU6m4"
               alt="Team member 1"
               className="w-16 h-16 rounded-full border-2 border-arno-dark-800"
             />
             <img
-              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202025-02-02%20015745-wrHlRT6CEoKhZnKzxr5q8AX3VHLYmj.png"
+              src="https://media.licdn.com/dms/image/v2/D4D03AQGzggTLfED0EA/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1725218172332?e=1744243200&v=beta&t=zvQIr8uPIL5pN-HVoaNx80bxIiY9CNzsSWzdY6eCOMc"
               alt="Team member 2"
               className="w-16 h-16 rounded-full border-2 border-arno-dark-800"
             />
             <img
-              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202025-02-02%20015745-wrHlRT6CEoKhZnKzxr5q8AX3VHLYmj.png"
+              src="https://media.licdn.com/dms/image/v2/D4D03AQFhdBfj3exv-A/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1710841552933?e=1744243200&v=beta&t=HQoFQe7PjPxd-4GishF0l-2Tg1KV3wjemh4_AMqhLp4"
               alt="Team member 3"
               className="w-16 h-16 rounded-full border-2 border-arno-dark-800"
             />
