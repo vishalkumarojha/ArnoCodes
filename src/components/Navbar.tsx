@@ -18,18 +18,13 @@ const Navbar = () => {
     <>
       <header className="sticky top-0 z-50 bg-arno-dark-800 bg-opacity-80 backdrop-blur-lg border-b border-arno-dark-600">
         <nav className="container mx-auto px-4 py-4 flex justify-between items-center">
-          {/* Logo */}
+          {/* Logo on the left */}
           <Link to="/" className="text-2xl font-bold text-white">
             ArnoCodes
           </Link>
 
-          {/* Mobile Menu Button */}
-          <button onClick={toggleMenu} className="md:hidden text-white focus:outline-none">
-            {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
-          </button>
-
-          {/* Desktop Menu */}
-          <ul className="hidden md:flex items-center space-x-8">
+          {/* Desktop Menu (Pushed to Right) */}
+          <ul className="hidden md:flex items-center space-x-8 ml-auto">
             {["Courses", "Practice", "Mentorship", "Competitions", "Jobs", "Blog"].map((item) => (
               <li key={item}>
                 <Link to={`/${item.toLowerCase()}`} className="text-gray-300 hover:text-white transition-colors">
@@ -38,6 +33,11 @@ const Navbar = () => {
               </li>
             ))}
           </ul>
+
+          {/* Mobile Menu Button */}
+          <button onClick={toggleMenu} className="md:hidden text-white focus:outline-none ml-auto">
+            {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
+          </button>
         </nav>
       </header>
 
@@ -48,13 +48,18 @@ const Navbar = () => {
           onClick={closeMenu}
         >
           <div
-            className="absolute top-0 left-0 w-full h-full bg-arno-dark-900 bg-opacity-90 backdrop-blur-lg shadow-xl p-6"
+            className="absolute top-0 right-0 w-3/4 h-full bg-arno-dark-900 bg-opacity-90 backdrop-blur-lg shadow-xl p-6"
             onClick={(e) => e.stopPropagation()} // Prevents closing when clicking inside
           >
-            <button onClick={closeMenu} className="text-white mb-4">
-              <X size={28} />
-            </button>
-            <ul className="space-y-6">
+            {/* Move X Button to the Right */}
+            <div className="flex justify-end">
+              <button onClick={closeMenu} className="text-white p-2">
+                <X size={28} />
+              </button>
+            </div>
+
+            {/* Menu Items */}
+            <ul className="space-y-6 text-right">
               {["Courses", "Practice", "Mentorship", "Competitions", "Jobs", "Blog"].map((item) => (
                 <li key={item}>
                   <Link
