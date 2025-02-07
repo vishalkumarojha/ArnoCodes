@@ -1,0 +1,151 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 224.3 76.3% 48%;
+
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Custom scrollbar for dark theme */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: theme("colors.arno-dark.900");
+}
+
+::-webkit-scrollbar-thumb {
+  background: theme("colors.arno-dark.600");
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: theme("colors.arno-dark.700");
+}
+
+/* Article styles */
+.prose {
+  @apply text-gray-300;
+}
+
+.prose h1 {
+  @apply text-4xl font-bold text-white mb-8;
+}
+
+.prose h2 {
+  @apply text-2xl font-semibold text-white mt-8 mb-4;
+}
+
+.prose h3 {
+  @apply text-xl font-semibold text-white mt-6 mb-3;
+}
+
+.prose p {
+  @apply mb-4 leading-relaxed;
+}
+
+.prose ul {
+  @apply list-disc list-inside mb-4 space-y-2;
+}
+
+.prose pre {
+  @apply bg-arno-dark-800 p-4 rounded-lg mb-4 overflow-x-auto;
+}
+
+.prose code {
+  @apply text-arno-blue-400 font-mono text-sm;
+}
+
+/* CodeMirror specific styles */
+.cm-editor {
+  height: 100%;
+}
+
+.cm-editor .cm-scroller {
+  font-family: "Fira Code", monospace;
+  line-height: 1.5;
+}
+
+.cm-editor .cm-line {
+  padding: 0 4px;
+}
+
+.cm-editor .cm-activeLineGutter {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Add these styles to your existing index.css */
+
+.mentor-card {
+  transition: transform 0.3s ease-in-out;
+}
+
+.mentor-card:hover {
+  transform: translateY(-4px);
+}
+
+/* Company logos grayscale effect */
+.company-logo {
+  filter: grayscale(100%) brightness(1.2);
+  transition: filter 0.3s ease-in-out;
+}
+
+.company-logo:hover {
+  filter: grayscale(0%);
+}
+
+@layer utilities {
+  .bg-gradient-radial {
+    background-image: radial-gradient(circle at center, var(--tw-gradient-from) 0%, var(--tw-gradient-to) 100%);
+  }
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+}
+
