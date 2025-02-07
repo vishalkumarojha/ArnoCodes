@@ -51,7 +51,9 @@ export function LectureTable({ lessons, stepIndex, lectureIndex, sheetId }: Lect
               </td>
               <td className="py-4">
                 {lesson.hasVideo && (
-                  <Play className="h-5 w-5 text-gray-400 hover:text-white cursor-pointer" title="Watch video" />
+                  <Play className="h-5 w-5 text-gray-400 hover:text-white cursor-pointer">
+                  <title>Watch video</title>
+                </Play>
                 )}
               </td>
               <td className="py-4">
