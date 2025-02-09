@@ -24,19 +24,34 @@ export default function MentorshipPage() {
     {
       name: "Vishal Ojha",
       image:
-        "https://cloud.appwrite.io/v1/storage/buckets/67a0d5c50025df0b0264/files/67a1a728001281352480/view?project=67a074a3000f8ad60523&mode=admin",
+        "https://cloud.appwrite.io/v1/storage/buckets/67a0d5c50025df0b0264/files/67a936a000306ebb2683/view?project=67a074a3000f8ad60523&mode=admin",
       achievements: [
         "Founder @ Arnocodes | Tech Lead @ Notion Community VIT & @ CIC VIT B ",
         "Tech Co-Lead @ E-Cell VIT B",
         "Web & Flutter Developer | UI/UX Designer.",
-        "Winner @CNH |Finalist in Buildathon & Project-Expo VITB.",
+        "Winner @CNH | Finalist in Buildathon & Project-Expo VITB.",
         "Worked with Next.Js,  Python Frameworks(Django, Flask) , MERN stack & More",
-        "65K+ impressions on LinkedIn | 2X Hacktoberfest Contributor",
+        "65K+ impressions on LinkedIn | 3X Hacktoberfest Contributor | Tech Team @Advitya'25",
         "Technical Content Writer @Earth5R , @TeamEverestNGO",
-        "Tech Team @Advitya'25",
       ],
       bookingLink: "https://topmate.io/vishal_ojha10",
       portfolioLink: "https://vishalkumarojha.github.io/LinkSpace/",
+    },
+    {
+      name: "Aadish Jagde",
+      image:
+        "https://cloud.appwrite.io/v1/storage/buckets/67a0d5c50025df0b0264/files/67a936fb0016d76effa6/view?project=67a074a3000f8ad60523&mode=admin",
+      achievements: [
+        "Co-Founder @ArnoCodes, @ScrambleLabs ",
+        "Front-End Developer | UI UX Designer ",
+        "Executive Manager @NotionCommunity VIT Bhopal University",
+        "Top 100 @EY techathon 23",
+        "Corporate Relations Lead @ Notion Community",
+        "50K+ impressions on LinkedIn",
+        "2X Hacktoberfest Contributor",
+      ],
+      bookingLink: "https://topmate.io/aadish_jagde",
+      portfolioLink: "https://www.linkedin.com/in/aadishjagde/",
     },
   ]
 
@@ -47,9 +62,9 @@ export default function MentorshipPage() {
           Meet Our Exceptional Instructors
         </h1>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-[1100px] mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-[1300px] mx-auto">
           {mentors.map((mentor, index) => (
-            <Card key={index} className="bg-arno-dark-800 border-arno-dark-600">
+            <Card key={index} className="bg-arno-dark-800 border-arno-dark-600 w-full">
               <CardContent className="p-6">
                 <div className="space-y-6">
                   {/* Profile Image */}
