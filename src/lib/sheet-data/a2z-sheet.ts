@@ -1113,7 +1113,7 @@ export const a2zContent = [
   },
   {
     title: "Topic 2: Mathematics for Programming",
-    count: "1",
+    count: "23",
     lectures: [
       {
         title: "Number Theory Basics",
