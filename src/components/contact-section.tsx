@@ -43,8 +43,8 @@ export function ContactSection() {
               <div className="space-y-4">
                 <p className="text-lg sm:text-xl">
                   Drop your question/query at{" "}
-                  <a href="mailto:info@arnocodes.com" className="text-arno-blue-400 hover:underline">
-                    info.arnocodes@gmail.com
+                  <a href="mailto:info.arnocodes26@gmail.com" className="text-arno-blue-400 hover:underline">
+                  info.arnocodes26@gmail.com
                   </a>
                 </p>
                 <p className="text-gray-400 text-sm sm:text-base">We will get back to you soon.</p>

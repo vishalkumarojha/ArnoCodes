@@ -26,7 +26,7 @@ const Footer = () => {
             <h3 className="text-lg sm:text-xl font-bold text-white mb-2">CONTACT US</h3>
             {/* <p className="text-white text-sm sm:text-base">Dr. Yogesh Shukla</p> */}
             <p className="text-white text-sm sm:text-base">ArnoCodes | A place to grow</p>
-            <p className="text-white text-sm sm:text-base">info.arnocodes@gmail.com</p>
+            <p className="text-white text-sm sm:text-base">info.arnocodes26@gmail.com</p>
           </div>
         </div>
         <div className="mt-6 sm:mt-8 pt-6 sm:pt-8 border-t border-white/20 text-center">

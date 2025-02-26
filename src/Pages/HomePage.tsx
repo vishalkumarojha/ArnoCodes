@@ -3,11 +3,13 @@ import { WhatWeDo } from "@/components/wedo"
 import { WhyChooseUs } from "@/components/why-choose-us"
 import { FAQSection } from "@/components/faq-section"
 import { ContactSection } from "@/components/contact-section"
+import { WelcomeModal } from "@/components/WelcomeModal"
 import { Link } from "react-router-dom"
 
 export default function HomePage() {
   return (
     <main className="text-white">
+      <WelcomeModal />
       {/* Hero Section */}
       <section className="min-h-[80vh] flex flex-col items-center justify-center py-20 text-center relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-arno-blue-400/10 to-transparent" />

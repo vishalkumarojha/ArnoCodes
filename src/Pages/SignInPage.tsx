@@ -1,35 +1,38 @@
+// "use client"
+
+// import type React from "react"
 // import { useState } from "react"
 // import { Link, useNavigate } from "react-router-dom"
 // import { Button } from "@/components/ui/button"
 // import { Input } from "@/components/ui/input"
 // import { Card, CardContent, CardHeader } from "@/components/ui/card"
-// import { useAuth } from "../components/contexts/AuthContext"
-// import { AppwriteException } from "appwrite"
+// // import { useAuth } from "../components/contexts/AuthContext"
 
 // export default function SignInPage() {
 //   const [email, setEmail] = useState("")
 //   const [password, setPassword] = useState("")
 //   const [error, setError] = useState("")
+//   const [loading, setLoading] = useState(false)
 //   const { signIn } = useAuth()
 //   const navigate = useNavigate()
 
 //   const handleSubmit = async (e: React.FormEvent) => {
 //     e.preventDefault()
 //     setError("")
+//     setLoading(true)
+
 //     try {
 //       await signIn(email, password)
-//       navigate("/")
+//       navigate("/courses") // Redirect to courses page after successful login
 //     } catch (error) {
-//       if (error instanceof AppwriteException) {
-//         if (error.code === 401) {
-//           setError("Invalid email or password. Please try again or create an account.")
-//         } else {
-//           setError(error.message)
-//         }
+//       console.error("Sign in error:", error)
+//       if (error instanceof Error) {
+//         setError(error.message)
 //       } else {
 //         setError("An unexpected error occurred. Please try again.")
 //       }
-//       console.error("Sign in error:", error)
+//     } finally {
+//       setLoading(false)
 //     }
 //   }
 
@@ -47,7 +50,11 @@
 //           <h2 className="mt-6 text-center text-3xl font-bold tracking-tight text-white">Sign in to your account</h2>
 //         </CardHeader>
 //         <CardContent>
-//           {error && <p className="text-red-500 text-center mb-4">{error}</p>}
+//           {error && (
+//             <div className="bg-red-500/10 border border-red-500 rounded-md p-3 mb-6">
+//               <p className="text-red-500 text-sm text-center">{error}</p>
+//             </div>
+//           )}
 //           <form className="space-y-6" onSubmit={handleSubmit}>
 //             <div>
 //               <label htmlFor="email" className="block text-sm font-medium text-gray-300">
@@ -62,6 +69,7 @@
 //                 className="bg-arno-dark-700 border-arno-dark-600 text-white"
 //                 value={email}
 //                 onChange={(e) => setEmail(e.target.value)}
+//                 disabled={loading}
 //               />
 //             </div>
 //             <div>
@@ -77,11 +85,16 @@
 //                 className="bg-arno-dark-700 border-arno-dark-600 text-white"
 //                 value={password}
 //                 onChange={(e) => setPassword(e.target.value)}
+//                 disabled={loading}
 //               />
 //             </div>
 //             <div>
-//               <Button type="submit" className="w-full bg-white text-black hover:bg-gray-100">
-//                 Sign in
+//               <Button
+//                 type="submit"
+//                 className="w-full bg-white text-black hover:bg-gray-100 disabled:opacity-50"
+//                 disabled={loading}
+//               >
+//                 {loading ? "Signing in..." : "Sign in"}
 //               </Button>
 //             </div>
 //           </form>
