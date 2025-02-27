@@ -61,7 +61,7 @@ export function WelcomeModal() {
             <p className="text-base sm:text-lg text-white mb-2">
               Topic-2<span className="text-red-500 font-bold"> is Live</span> in Courses Section,
             </p>
-            <p className="text-base sm:text-lg text-white">Intern opportunities at ArnoCodes is Coming Soon!!!!</p>
+            <p className="text-base sm:text-lg text-white">Intern opportunities at ArnoCodes is available!!!!</p>
           </div>
 
           {/* Social media links */}
