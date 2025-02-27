@@ -7,6 +7,7 @@ import CoursesPage from "./Pages/CoursesPage"
 import MentorshipPage from "./Pages/MentorshipPage"
 import CompetitionsPage from "./Pages/CompetitionsPage"
 import JobsPage from "./Pages/JobsPage"
+import JobDetailsPage from "./Pages/JobDetailsPage"
 import BlogPage from "./Pages/BlogPage"
 import BlogPostPage from "./Pages/BlogPostPage"
 import PracticePage from "./Pages/PracticePage"
@@ -26,6 +27,7 @@ function App() {
             <Route path="/mentorship" element={<MentorshipPage />} />
             <Route path="/competitions" element={<CompetitionsPage />} />
             <Route path="/jobs" element={<JobsPage />} />
+            <Route path="/jobs/:id" element={<JobDetailsPage />} />
             <Route path="/blog" element={<BlogPage />} />
             <Route path="/blog/:postId" element={<BlogPostPage />} />
             <Route path="/article/:articleId" element={<ArticlePage />} />
