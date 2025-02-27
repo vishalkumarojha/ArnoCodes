@@ -6,6 +6,22 @@ import { Link } from "react-router-dom"
 export default function MentorshipPage() {
   const mentors = [
     {
+      name: "Vishal Ojha",
+      image:
+        "https://cloud.appwrite.io/v1/storage/buckets/67a0d5c50025df0b0264/files/67a936a000306ebb2683/view?project=67a074a3000f8ad60523&mode=admin",
+      achievements: [
+        "Founder @ Arnocodes | Tech Lead @ Notion Community VIT & @ CIC VIT B , Co-Lead @ E-Cell VIT B",
+        "Web & Flutter Developer | UI/UX Designer.",
+        "Winner @CNH | Finalist in Buildathon & Project-Expo VITB.",
+        "Worked with Next.Js,  Python Frameworks(Django, Flask) , MERN stack & More",
+        "65K+ impressions on LinkedIn | 3X Hacktoberfest Contributor | Tech Team @Advitya'25",
+        "Technical Content Writer @Earth5R , @TeamEverestNGO",
+      ],
+      bookingLink: "https://topmate.io/vishal_ojha10",
+      portfolioLink: "https://vishalkumarojha.github.io/LinkSpace/",
+    },
+
+    {
       name: "Rishav Mishra",
       image:
         "https://cloud.appwrite.io/v1/storage/buckets/67a0d5c50025df0b0264/files/67a1a506002d97d47b4b/view?project=67a074a3000f8ad60523&mode=admin",
@@ -22,22 +38,6 @@ export default function MentorshipPage() {
       portfolioLink: "https://www.linkedin.com/in/rishavmishra002/overlay/about-this-profile/",
     },
     {
-      name: "Vishal Ojha",
-      image:
-        "https://cloud.appwrite.io/v1/storage/buckets/67a0d5c50025df0b0264/files/67a936a000306ebb2683/view?project=67a074a3000f8ad60523&mode=admin",
-      achievements: [
-        "Founder @ Arnocodes | Tech Lead @ Notion Community VIT & @ CIC VIT B ",
-        "Tech Co-Lead @ E-Cell VIT B",
-        "Web & Flutter Developer | UI/UX Designer.",
-        "Winner @CNH | Finalist in Buildathon & Project-Expo VITB.",
-        "Worked with Next.Js,  Python Frameworks(Django, Flask) , MERN stack & More",
-        "65K+ impressions on LinkedIn | 3X Hacktoberfest Contributor | Tech Team @Advitya'25",
-        "Technical Content Writer @Earth5R , @TeamEverestNGO",
-      ],
-      bookingLink: "https://topmate.io/vishal_ojha10",
-      portfolioLink: "https://vishalkumarojha.github.io/LinkSpace/",
-    },
-    {
       name: "Aadish Jagde",
       image:
         "https://cloud.appwrite.io/v1/storage/buckets/67a0d5c50025df0b0264/files/67a936fb0016d76effa6/view?project=67a074a3000f8ad60523&mode=admin",
@@ -52,6 +52,22 @@ export default function MentorshipPage() {
       ],
       bookingLink: "https://topmate.io/aadish_jagde",
       portfolioLink: "https://www.linkedin.com/in/aadishjagde/",
+    },
+    {
+      name: "Abhishek kumar",
+      image:
+        "https://cloud.appwrite.io/v1/storage/buckets/67a0d5c50025df0b0264/files/67bfcc96001304d71abb/view?project=67a074a3000f8ad60523&mode=admin",
+      achievements: [
+        "Founder @ Scramble Labs | Founding Team @ Arno Codes",
+        "Joint Secretary Student Council, VIT B",
+        "Founder @ Notion Community VIT B | Operations Lead @ E Cell VIT B | Partnership @ A.I Club VIT B",
+        "Community @ Notion | PW SOS Fellow",
+        "Top 20 @ INAE SERB Youth Conclave | Top 100 in EY Techathon",
+        "300K+ Impression on LinkedIn",
+        "Worked with brands like Notion | PW SOS",
+      ],
+      bookingLink: "https://topmate.io/heyabhishekkumar",
+      portfolioLink: "https://www.linkedin.com/in/heyabhishekkumar/",
     },
   ]
 
