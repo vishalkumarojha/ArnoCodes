@@ -6,16 +6,23 @@ import { X } from "lucide-react"
 import { FaWhatsapp, FaLinkedin, FaInstagram } from "react-icons/fa"
 import { useLoading } from "./LoadingContext"
 
-export function WelcomeModal() {
+interface WelcomeModalProps {
+  showAfterDelay: boolean
+}
+
+export function WelcomeModal({ showAfterDelay }: WelcomeModalProps) {
   const [isOpen, setIsOpen] = useState(false)
   const { isPreloaderComplete } = useLoading()
 
   useEffect(() => {
-    // Only show modal after preloader is complete
-    if (isPreloaderComplete) {
-      setIsOpen(true)
+    if (isPreloaderComplete && showAfterDelay) {
+      const timer = setTimeout(() => {
+        setIsOpen(true)
+      }, 6000) // 6 seconds delay
+
+      return () => clearTimeout(timer)
     }
-  }, [isPreloaderComplete])
+  }, [isPreloaderComplete, showAfterDelay])
 
   return (
     <Dialog open={isOpen} onOpenChange={setIsOpen}>

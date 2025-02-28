@@ -13,7 +13,7 @@ export default function HomePage() {
     <LoadingProvider>
       <main className="text-white">
         <PreLoader />
-        <WelcomeModal />
+        <WelcomeModal showAfterDelay={true} />
         {/* Hero Section */}
         <section className="min-h-[80vh] flex flex-col items-center justify-center py-20 text-center relative overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-b from-arno-blue-400/10 to-transparent" />
