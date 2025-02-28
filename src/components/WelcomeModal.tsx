@@ -4,14 +4,18 @@ import { useEffect, useState } from "react"
 import { Dialog, DialogContent } from "@/components/ui/dialog"
 import { X } from "lucide-react"
 import { FaWhatsapp, FaLinkedin, FaInstagram } from "react-icons/fa"
+import { useLoading } from "./LoadingContext"
 
 export function WelcomeModal() {
   const [isOpen, setIsOpen] = useState(false)
+  const { isPreloaderComplete } = useLoading()
 
   useEffect(() => {
-    // Show modal every time the component mounts
-    setIsOpen(true)
-  }, [])
+    // Only show modal after preloader is complete
+    if (isPreloaderComplete) {
+      setIsOpen(true)
+    }
+  }, [isPreloaderComplete])
 
   return (
     <Dialog open={isOpen} onOpenChange={setIsOpen}>
@@ -28,7 +32,8 @@ export function WelcomeModal() {
           {/* Company Logo */}
           <div className="mb-4 sm:mb-6 text-center">
             <h2 className="text-2xl sm:text-3xl font-bold">
-              <span className="text-arno-blue-400">&lt;</span>ArnoCodes<span className="text-arno-blue-400">&gt;</span>
+              <span className="text-arno-blue-400">&lt;</span>ArnoCodes
+              <span className="text-arno-blue-400">&gt;</span>
             </h2>
           </div>
 
