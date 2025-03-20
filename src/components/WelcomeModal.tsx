@@ -71,9 +71,12 @@ export function WelcomeModal({ showAfterDelay }: WelcomeModalProps) {
           {/* Text content */}
           <div className="text-center mb-6 sm:mb-8">
             <p className="text-base sm:text-lg text-white mb-2">
-              Topic-2<span className="text-red-500 font-bold"> is Live</span> in Courses Section,
+              Join Our <span className="text-green-500 font-bold"> WhatsApp Community</span> for Interactive live Sessions.
             </p>
-            <p className="text-base sm:text-lg text-white">Intern opportunities at ArnoCodes is available!!!!</p>
+            <p className="text-sm sm:text-base text-white italic">
+              [ Click the <span className="text-green-500 font-bold">Whatsapp icon</span> to join the community ]
+            </p>
+
           </div>
 
           {/* Social media links */}
