@@ -18,7 +18,7 @@ export function WelcomeModal({ showAfterDelay }: WelcomeModalProps) {
     if (isPreloaderComplete && showAfterDelay) {
       const timer = setTimeout(() => {
         setIsOpen(true)
-      }, 6000) // 6 seconds delay
+      }, 3000) // 6 seconds delay
 
       return () => clearTimeout(timer)
     }
