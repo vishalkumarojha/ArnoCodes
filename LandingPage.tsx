@@ -1,6 +1,6 @@
 import React from "react"
-import { Button } from "@/components/ui/button"
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
+import { Button } from "./src/components/ui/button"
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "./src/components/ui/accordion"
 
 export default function LandingPage() {
   return (
