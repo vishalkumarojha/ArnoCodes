@@ -1,10 +1,11 @@
 import { useState, useEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate(); // Use navigate for programmatic navigation
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
   const closeMenu = () => setIsMenuOpen(false);
@@ -13,6 +14,11 @@ const Navbar = () => {
   useEffect(() => {
     closeMenu();
   }, [location.pathname]);
+
+  // Handle Courses Navigation to Always Go to CoursesPage.tsx
+  const handleGoToCourses = () => {
+    navigate("/courses"); // Redirect to CoursesPage.tsx
+  };
 
   return (
     <>
@@ -27,9 +33,22 @@ const Navbar = () => {
           <ul className="hidden md:flex items-center space-x-8 ml-auto">
             {["Courses", "Practice", "Mentorship", "Competitions", "Jobs", "Blog"].map((item) => (
               <li key={item}>
-                <Link to={`/${item.toLowerCase()}`} className="text-gray-300 hover:text-white transition-colors">
-                  {item}
-                </Link>
+                {item === "Courses" ? (
+                  // Call navigate() to manually redirect to /courses
+                  <button
+                    onClick={handleGoToCourses}
+                    className="text-gray-300 hover:text-white transition-colors"
+                  >
+                    {item}
+                  </button>
+                ) : (
+                  <Link
+                    to={`/${item.toLowerCase()}`}
+                    className="text-gray-300 hover:text-white transition-colors"
+                  >
+                    {item}
+                  </Link>
+                )}
               </li>
             ))}
           </ul>
@@ -41,7 +60,7 @@ const Navbar = () => {
         </nav>
       </header>
 
-      {/* Mobile Dropdown Menu - Now Full Width & Pushes Content */}
+      {/* Mobile Dropdown Menu - Full Width & Pushes Content */}
       {isMenuOpen && (
         <div
           className="fixed inset-0 bg-black bg-opacity-50 z-50 md:hidden"
@@ -49,7 +68,7 @@ const Navbar = () => {
         >
           <div
             className="absolute top-0 right-0 w-3/4 h-full bg-arno-dark-900 bg-opacity-90 backdrop-blur-lg shadow-xl p-6"
-            onClick={(e) => e.stopPropagation()} // Prevents closing when clicking inside
+            onClick={(e) => e.stopPropagation()} // Prevent closing when clicking inside
           >
             {/* Move X Button to the Right */}
             <div className="flex justify-end">
@@ -58,16 +77,25 @@ const Navbar = () => {
               </button>
             </div>
 
-            {/* Menu Items */}
+            {/* Mobile Menu Items */}
             <ul className="space-y-6 text-right">
               {["Courses", "Practice", "Mentorship", "Competitions", "Jobs", "Blog"].map((item) => (
                 <li key={item}>
-                  <Link
-                    to={`/${item.toLowerCase()}`}
-                    className="text-gray-300 hover:text-white block text-lg"
-                  >
-                    {item}
-                  </Link>
+                  {item === "Courses" ? (
+                    <button
+                      onClick={handleGoToCourses}
+                      className="text-gray-300 hover:text-white block text-lg w-full text-right"
+                    >
+                      {item}
+                    </button>
+                  ) : (
+                    <Link
+                      to={`/${item.toLowerCase()}`}
+                      className="text-gray-300 hover:text-white block text-lg"
+                    >
+                      {item}
+                    </Link>
+                  )}
                 </li>
               ))}
             </ul>
