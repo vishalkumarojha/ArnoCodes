@@ -69,7 +69,23 @@ export default function MentorshipPage() {
       bookingLink: "https://topmate.io/heyabhishekkumar",
       portfolioLink: "https://www.linkedin.com/in/heyabhishekkumar/",
     },
-  
+    {
+      name: "Tejus Gupta",
+      image:
+        "https://github.com/notion-vit/NotionCommunityVITB/blob/main/images/team-members/Tejus%20Gupta%2023bce11334.jpg?raw=true",
+      achievements: [
+        "Founding Team @ Arno Codes",
+        "C.M.O. @ Scramble Labs",
+        "AIR 1 in research paper writing in VIVIBHA'25 hosted by Bhariya shikshan mandal(BSM)",
+        "Community @ Notion | Vice president @Notion Community VITB",
+        "Social media manager @ furnishing mall",
+        "E commerce | dropshipping",
+        "30K+ Impression on LinkedIn",
+        
+      ],
+      bookingLink: "https://topmate.io/heyabhishekkumar",
+      portfolioLink: "https://www.linkedin.com/in/heyabhishekkumar/",
+    },
   ]
 
   return (
