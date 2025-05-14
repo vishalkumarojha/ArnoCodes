@@ -43,3 +43,17 @@ function App() {
 
 export default App
 
+// return (
+//     <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+//       {courses.map((course) => (
+//         <Link
+//           key={course.path}
+//           to={`/courses/${course.path}`}
+//           className="p-4 bg-arno-dark-800 rounded-lg shadow hover:bg-arno-dark-700 transition"
+//           onClick={() => onSelectCourse(course.path)}
+//         >
+//           <h3 className="text-white text-2xl">{course.name}</h3>
+//         </Link>
+//       ))}
+//     </div>
+//   );
