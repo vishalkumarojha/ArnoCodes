@@ -79,7 +79,7 @@ export function PreLoader() {
     <AnimatePresence>
       {isLoading && (
         <motion.div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-arno-dark-900"
+          className="fixed inset-0 z-50 flex items-center justify-center bg-[#111827]"
           initial={{ opacity: 1 }}
           exit={{
             opacity: 0,
@@ -187,4 +187,3 @@ export function PreLoader() {
     </AnimatePresence>
   )
 }
-
