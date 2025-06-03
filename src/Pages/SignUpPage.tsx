@@ -83,7 +83,7 @@ export default function SignUpPage() {
       <Card className="w-full max-w-md space-y-8 bg-arno-dark-800 border-arno-dark-600">
         <CardHeader>
           <div className="flex justify-center">
-            <img src="/src/assets/codes-arno.png" alt="Logo" className="h-12 w-auto" />
+            <img src="https://github.com/vishalkumarojha/ArnoCodes/blob/main/src/assets/codes-arno.png?raw=true" alt="Logo" className="h-12 w-auto" />
           </div>
           <h2 className="mt-6 text-center text-3xl font-bold tracking-tight text-white">Create an account</h2>
         </CardHeader>
